@@ -1,0 +1,5 @@
+node_modules/
+session.json
+.auth_info.json
+*.log
+*.lock

@@ -1,0 +1,28 @@
+{
+  "name": "numcheck",
+  "version": "1.0.0",
+  "description": "whatsapp number checker",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@adiwajshing/baileys": "^3.2.1",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.0",
+    "csv": "^6.0.5",
+    "csv-parse": "^5.0.4",
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "json2csv": "^5.0.6",
+    "multer": "^1.4.4",
+    "progress": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
