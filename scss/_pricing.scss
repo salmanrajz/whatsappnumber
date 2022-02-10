@@ -1,0 +1,52 @@
+//
+// pricing.scss
+//
+
+
+
+.pricing-box{
+  border: 1px solid transparent;
+  position: relative;
+    box-shadow: $box-shadow;
+    padding: 35px 50px;
+    .pricing-lable{
+      position: absolute;
+    right: 0px;
+    top: 30px;
+    background: $primary;
+    display: inline-block;
+    padding: 4px 19px;
+    color: #fff;
+    border-radius: 20px 0px 0px 20px;
+    font-weight: 600;
+    }
+
+  .pricing-plan{
+    h1 {
+        font-size: 50px;
+  
+      }
+      sup {
+        font-size: 20px;
+        position: relative;
+        top: -30px;
+      }
+  }
+  &:hover{
+    transition: all .45s ease;
+    border: 1px solid $primary;
+  }
+  
+}
+
+
+
+
+
+  
+
+  
+ 
+  
+ 
+ 

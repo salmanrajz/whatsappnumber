@@ -1,0 +1,44 @@
+//
+// testimonail.scss
+//
+
+
+.bg-testimonial{
+    background-image: url(../images/bg-4.jpg);
+    background-size: cover;
+    position: relative;
+    background-position: center center;
+}
+
+.testi-carousel{
+    .testimonial-box{
+        position: relative;
+        .testi-img-user{
+           img{
+            width: 70px;
+           }
+        }
+        .testi-border{
+            border: 1px solid $primary;
+            width: 120px;
+            margin: 0 auto;
+        }
+      
+    }
+    &:before{
+        position: absolute;
+        content: "";
+        width: 50%;
+        height: 82%;
+        background: $orange;
+        bottom: 14px;
+        border-radius: 15px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        }
+}
+
+.owl-pagination{
+    display: none;
+}

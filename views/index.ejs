@@ -5,16 +5,182 @@
 
 <head>
     <meta charset="utf-8">
-    <title>LIST</title>
+    <title>WhatsApp Online Checker - Let's Build Market</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.seekpng.com/png/detail/853-8537600_tick-mark-png-icon-for-kids-whatsapp-double.png">
+
     <script src="/send_url.js"></script>
     <script src="./js/app.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        body {
+            background: #25D366;
+        }
 
+        .forget-pwd>a {
+            color: #dc3545;
+            font-weight: 500;
+        }
+
+        .forget-password .panel-default {
+            padding: 25%;
+            margin-top: -27%;
+        }
+
+        .forget-password .panel-body {
+            padding: 5%;
+            margin-bottom: -50%;
+            background: #fff;
+            border-radius: 5px;
+            -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        img {
+            width: 40%;
+            margin-bottom: 10%;
+        }
+
+        .btnForget {
+            background: #c0392b;
+            border: none;
+        }
+
+        .forget-password .dropdown {
+            width: 100%;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+        }
+
+        .forget-password .dropdown button {
+            width: 100%;
+        }
+
+        .forget-password .dropdown ul {
+            width: 100%;
+        }
+
+        .mt-10 {
+            margin-top: 10px
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="top-wrapper">
+    <div class="container forget-password">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1021px-WhatsApp.svg.png"
+                                alt="car-key"   border="0">
+                            <h2 class="text-center">WhatsApp Verifier</h2>
+                            <p>Identify which phone numbers are active and those that are not able to receive whatsapp
+                                messages. Optimize your resources and save time and money.
+
+                            </p>
+                            <!-- <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <select class="form-control" id="sel1">
+                                                <option selected="true" disabled="disabled">Please Select Security Question</option>
+                                                <option>Which is your favorite movie?</option>
+                                                <option>What is your pet's name?</option>
+                                                <option>What is the name of your village?</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                            <input id="forgetAnswer" name="forgetAnswer" placeholder="Answer" class="form-control"  type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input name="btnForget" class="btn btn-lg btn-primary btn-block btnForget" value="Reset Password" type="submit">
+                                    </div>
+
+                                </form> -->
+                            <form enctype="multipart/form-data" method="post" action="/uploadFile">
+                                <div class="form-group">
+                                    <label for="emailName">What's Your Email?.</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i
+                                                class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                        <input id="emailName" name="email" placeholder="Type Your Email"
+                                            class="form-control" type="email" required>
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label for="filename">Choose Your Desired File Name.</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i
+                                                class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                        <input id="filename" name="filename" placeholder="File Name: myfile"
+                                            class="form-control" type="text" required>
+                                    </div>
+                                </div> -->
+                                <hr>
+                                <input id="myFile" name="myFile" type="file" class="mt-10 mb-10" accept=".csv"/>
+                                <!-- <input id="fileName" class="form-control" name="fileName" type="text" /> -->
+                                <hr>
+                                <input type="submit" class="btn btn-lg btn-success btn-block  mt-10"
+                                    value="Upload" id="submit" />
+                                <!-- <input type="submit" class="downloadbuttn btn-success btn" value="Download" id="btnDwn" /> -->
+                            </form>
+                            </center>
+                            <%if(typeof error !== "undefined"){%>
+                            <center>
+                                <h6 class="red">~~~ <%= error %> ~~~</h6>
+                            </center>
+                            <% } else if(typeof result !== "undefined"){%>
+                            <div class="index-table-wrapper">
+                                <div class="table-head">
+                                    <span class="id-column">Number</span>
+                                    <span class="name-column">Value</span>
+                                </div>
+                                <ul class="table-body">
+                                    <% for (var i = 0; i < result.length;  i++) { %>
+                                    <li>
+                                        <span class="id-column"><%= result[i].number %></span>
+                                        <span class="name-column"><a href="">Download Result</a></span>
+                                    </li>
+                                    <% }%>
+                                </ul>
+                            </div>
+                            <% } %>
+                            <hr>
+                            <p>
+                                once file uploaded, Please wait AI will send your file to your Email, Thanks for your
+                                patience.
+                            </p>
+                            <p class="red">
+                                PS: You're Only Allow to Upload 8k Number at a time 
+                            </p>
+                        </div>
+                        <footer class="text-center center">
+                            <!-- <center> -->
+                                Made with 🧡<br> Special Thanks to 
+                                <a href="https://github.com/umarshaikh64" class="inline">
+                                    Umar
+                                </a>
+                            <!-- </center> -->
+                        </footer>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="top-wrapper hidden d-none">
         <div class="top-detail">
             <center>
                 <h2>Whatsapp Checker BY Umar Shaikh v2.0</h2>
@@ -27,37 +193,17 @@
 
 
 
-                <form  enctype="multipart/form-data" method="post" action="/uploadFile">
-                <input id="myFile" name="myFile" type="file" />
-            <!-- <input id="fileName" class="form-control" name="fileName" type="text" /> -->
+                <!-- <form  enctype="multipart/form-data" method="post" action="/uploadFile"> -->
+                <!-- <input id="myFile" name="myFile" type="file" /> -->
+                <!-- <input id="fileName" class="form-control" name="fileName" type="text" /> -->
 
-                <input type="submit" class="index-button" value="Upload" id="submit" />
+                <!-- <input type="submit" class="index-button" value="Upload" id="submit" /> -->
                 <!-- <input type="submit" class="downloadbuttn btn-success btn" value="Download" id="btnDwn" /> -->
-                </form>
-             
-            </center>
-            <%if(typeof error !== "undefined"){%>
-            <center><h2><%= error %></h2></center>
-            <% } else if(typeof result !== "undefined"){%>
-            <div class="index-table-wrapper">
-                <div class="table-head">
-                    <span class="id-column">Number</span>
-                    <span class="name-column">Value</span>
-                </div>
-                <ul class="table-body">
-                    <% for (var i = 0; i < result.length;  i++) { %>
-                    <li>
-                        <span class="id-column"><%= result[i].number %></span>
-                        <span class="name-column"><a href="<%= result[i].value %>">Download Result</a></span>
-                    </li>
-                    <% }%>
-                </ul>
-            </div>
-            <% } %>
+                <!-- </form> -->
+
+
         </div>
     </div>
 </body>
-<footer>
-    <center>Made with 🧡 by yoga sakti</center>
-</footer>
+
 </html>

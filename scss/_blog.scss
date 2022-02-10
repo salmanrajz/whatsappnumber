@@ -1,0 +1,32 @@
+//
+// blog.scss
+//
+
+
+.blog-box {
+    position: relative;
+    .blog-title {
+      transition: all 0.5s;
+      color: $dark;
+      &:hover {
+          color: $primary;
+        }
+    }
+    .blog-lable {
+      top: 30px;
+      background: $primary;
+      color: $white;
+      font-size: 13px;
+      position: absolute;
+      top: 30px;
+      right: 0px;
+      padding: 6px 14px;
+      border-radius: 20px 0px 0px 20px;
+    }
+    
+  }
+  
+ 
+
+ 
+  

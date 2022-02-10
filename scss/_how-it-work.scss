@@ -1,0 +1,43 @@
+//
+// how-It-work.scss
+//
+
+
+.work-box{
+  .work-count{
+    p{
+      width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 30px;
+    color: $primary;
+    position: relative;
+    top: 35px;
+    left: 40px;
+    display: inline-block;
+      background: $white;
+      font-size: 14px;
+    font-weight: bold;
+    }
+  }
+  .work-icon{
+    i{
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      background-color: $primary;
+      font-size: 50px;
+      color: $white;
+      border-radius: 50%;
+    }
+  }
+  .arrow{
+    position: absolute;
+    left: 77%;
+    top: 77px;
+  }
+}
+
+
+
+
