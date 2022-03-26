@@ -105,7 +105,8 @@ class App {
         // }
         // console.log(error)
         // console.log(response)
-        // console.log(body)
+        console.log('salmannnnn');
+        console.log(body);
         //  global.Auth = body;
         // global.number
         var Auth = body;
